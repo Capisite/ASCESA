@@ -1,447 +1,1231 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proposta Comercial ASCESA | Capisite</title>
-<link rel="icon" href="logo-branca.png" type="image/png">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root {
-    --primary: #1B4FDB;
-    --secondary: #0A1F6B;
-    --accent: #3ECFCF;
-    --bg: #0D1117;
-    --bg2: #161B27;
-    --bg3: #1E2436;
-    --text: #E8EAF0;
-    --muted: #8892A4;
-    --border: #2A3147;
-    --green: #22C55E;
-  }
-  html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; }
-  
-  /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(13,17,23,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
-  .nav-logo { font-weight: 800; font-size: 1.2rem; color: var(--accent); letter-spacing: 1px; }
-  .nav-links { display: flex; gap: 1.5rem; }
-  .nav-links a { color: var(--muted); text-decoration: none; font-size: .85rem; transition: color .2s; }
-  .nav-links a:hover { color: var(--accent); }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposta Comercial ASCESA | Capisite</title>
+  <link rel="icon" href="logo-branca.png" type="image/png">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  /* HERO */
-  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6rem 2rem 4rem; background: radial-gradient(ellipse at 50% 0%, rgba(27,79,219,.25) 0%, transparent 70%); }
-  .badge { background: rgba(62,207,207,.12); border: 1px solid rgba(62,207,207,.3); color: var(--accent); font-size: .78rem; letter-spacing: 2px; text-transform: uppercase; padding: .4rem 1.2rem; border-radius: 999px; margin-bottom: 1.5rem; display: inline-block; }
-  .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.15; margin-bottom: 1rem; }
-  .hero h1 span { background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-  .hero p { color: var(--muted); font-size: 1.1rem; max-width: 640px; line-height: 1.7; margin-bottom: 2.5rem; }
-  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-  .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; border: none; padding: .85rem 2rem; border-radius: 8px; font-size: .95rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: opacity .2s; }
-  .btn-primary:hover { opacity: .85; }
-  .btn-outline { border: 1px solid var(--border); color: var(--text); padding: .85rem 2rem; border-radius: 8px; font-size: .95rem; cursor: pointer; text-decoration: none; transition: border-color .2s; }
-  .btn-outline:hover { border-color: var(--accent); }
-  .hero-stats { display: flex; gap: 2.5rem; margin-top: 3.5rem; flex-wrap: wrap; justify-content: center; }
-  .stat { text-align: center; }
-  .stat strong { display: block; font-size: 1.8rem; font-weight: 900; color: var(--accent); }
-  .stat span { font-size: .8rem; color: var(--muted); }
+    :root {
+      --primary: #1B4FDB;
+      --secondary: #0A1F6B;
+      --accent: #3ECFCF;
+      --bg: #0D1117;
+      --bg2: #161B27;
+      --bg3: #1E2436;
+      --text: #E8EAF0;
+      --muted: #8892A4;
+      --border: #2A3147;
+      --green: #22C55E;
+    }
 
-  /* SECTIONS */
-  section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; scroll-margin-top: 80px; }
-  .section-label { font-size: .75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
-  h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: .8rem; }
-  .subtitle { color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 700px; margin-bottom: 3rem; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* PILLARS */
-  .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; }
-  .pillar { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; transition: border-color .2s; }
-  .pillar:hover { border-color: var(--accent); }
-  .pillar-icon { font-size: 1.8rem; margin-bottom: .8rem; }
-  .pillar h3 { font-size: 1rem; font-weight: 700; margin-bottom: .4rem; }
-  .pillar p { font-size: .82rem; color: var(--muted); line-height: 1.6; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-  /* SCOPE TABS */
-  .tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 2rem; }
-  .tab { background: var(--bg2); border: 1px solid var(--border); color: var(--muted); padding: .5rem 1.2rem; border-radius: 999px; cursor: pointer; font-size: .85rem; transition: all .2s; }
-  .tab.active { background: var(--primary); border-color: var(--primary); color: #fff; }
-  .tab-content { display: none; }
-  .tab-content.active { display: block; }
-  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
-  .feature-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1.2rem; }
-  .feature-card h4 { font-size: .92rem; font-weight: 700; margin-bottom: .6rem; color: var(--text); }
-  .feature-card ul { list-style: none; }
-  .feature-card ul li { font-size: .8rem; color: var(--muted); padding: .2rem 0; padding-left: 1rem; position: relative; }
-  .feature-card ul li::before { content: '›'; position: absolute; left: 0; color: var(--accent); }
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(13, 17, 23, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
 
-  /* TECH */
-  .tech-stack { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
-  .tech-pill { background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: .5rem 1rem; font-size: .82rem; display: flex; align-items: center; gap: .5rem; }
-  .tech-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: var(--accent);
+      letter-spacing: 1px;
+    }
 
-  /* TIMELINE */
-  .timeline { position: relative; padding-left: 2rem; }
-  .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--primary), var(--accent)); border-radius: 99px; }
-  .phase { position: relative; margin-bottom: 2rem; }
-  .phase::before { content: ''; position: absolute; left: -2.45rem; top: .3rem; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
-  .phase-header { display: flex; align-items: center; gap: 1rem; margin-bottom: .5rem; flex-wrap: wrap; }
-  .phase-num { background: var(--primary); color: #fff; font-size: .72rem; font-weight: 700; padding: .2rem .7rem; border-radius: 999px; }
-  .phase-dur { background: var(--bg3); color: var(--muted); font-size: .72rem; padding: .2rem .7rem; border-radius: 999px; border: 1px solid var(--border); }
-  .phase h3 { font-size: 1rem; font-weight: 700; }
-  .phase p { font-size: .83rem; color: var(--muted); line-height: 1.6; }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
 
-  /* TEAM */
-  .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
-  .team-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
-  .team-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent)); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; margin-bottom: 1rem; }
-  .team-card h3 { font-size: .95rem; font-weight: 700; margin-bottom: .2rem; }
-  .team-role { font-size: .75rem; color: var(--accent); margin-bottom: .8rem; }
-  .team-card p { font-size: .8rem; color: var(--muted); line-height: 1.6; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .85rem;
+      transition: color .2s;
+    }
 
-  /* PRICING */
-  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-  .price-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; position: relative; overflow: hidden; }
-  .price-card.featured { border-color: var(--primary); background: linear-gradient(135deg, rgba(27,79,219,.15), var(--bg2)); }
-  .price-card.featured::before { content: 'RECOMENDADO'; position: absolute; top: 1rem; right: -1.5rem; background: var(--primary); color: #fff; font-size: .65rem; font-weight: 700; padding: .3rem 2rem; transform: rotate(35deg); letter-spacing: 1px; }
-  .price-label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: .5rem; }
-  .price-value { font-size: 2.4rem; font-weight: 900; color: var(--text); margin-bottom: .3rem; }
-  .price-value span { font-size: 1rem; font-weight: 400; color: var(--muted); }
-  .price-desc { font-size: .82rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6; }
-  .price-features { list-style: none; }
-  .price-features li { font-size: .83rem; color: var(--muted); padding: .45rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: .6rem; }
-  .price-features li:last-child { border: none; }
-  .price-features li::before { content: '✓'; color: var(--green); font-weight: 700; }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
 
-  /* PAYMENT PHASES */
-  .payment-phases { display: grid; gap: .8rem; }
-  .pay-row { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .5rem; }
-  .pay-row:hover { border-color: var(--primary); }
-  .pay-name { font-size: .9rem; font-weight: 600; }
-  .pay-pct { font-size: .78rem; color: var(--muted); }
-  .pay-val { font-size: 1.05rem; font-weight: 800; color: var(--accent); }
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      background: radial-gradient(ellipse at 50% 0%, rgba(27, 79, 219, .25) 0%, transparent 70%);
+    }
 
-  /* PORTFOLIO */
-  .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; }
-  .port-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; transition: border-color .2s; }
-  .port-card:hover { border-color: var(--accent); }
-  .port-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: .4rem; }
-  .port-card p { font-size: .8rem; color: var(--muted); line-height: 1.6; margin-bottom: 1rem; }
-  .port-card a { font-size: .78rem; color: var(--accent); text-decoration: none; }
-  .port-card a:hover { text-decoration: underline; }
+    .badge {
+      background: rgba(62, 207, 207, .12);
+      border: 1px solid rgba(62, 207, 207, .3);
+      color: var(--accent);
+      font-size: .78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: .4rem 1.2rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
 
-  /* FOOTER */
-  footer { background: var(--bg2); border-top: 1px solid var(--border); text-align: center; padding: 2rem; color: var(--muted); font-size: .83rem; }
-  footer a { color: var(--accent); text-decoration: none; }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
 
-  /* DIVIDER */
-  .section-divider { border: none; border-top: 1px solid var(--border); max-width: 1100px; margin: 0 auto; }
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-  @media (max-width: 600px) {
-    .nav-links { display: none; }
-    .hero-stats { gap: 1.5rem; }
-  }
-</style>
+    .hero p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 640px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      border: none;
+      padding: .85rem 2rem;
+      border-radius: 8px;
+      font-size: .95rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity .2s;
+    }
+
+    .btn-primary:hover {
+      opacity: .85;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: .85rem 2rem;
+      border-radius: 8px;
+      font-size: .95rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color .2s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--accent);
+    }
+
+    .stat span {
+      font-size: .8rem;
+      color: var(--muted);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      scroll-margin-top: 80px;
+    }
+
+    .section-label {
+      font-size: .75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: .5rem;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      margin-bottom: .8rem;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      max-width: 700px;
+      margin-bottom: 3rem;
+    }
+
+    /* PILLARS */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .pillar {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border-color .2s;
+    }
+
+    .pillar:hover {
+      border-color: var(--accent);
+    }
+
+    .pillar-icon {
+      font-size: 1.8rem;
+      margin-bottom: .8rem;
+    }
+
+    .pillar h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: .4rem;
+    }
+
+    .pillar p {
+      font-size: .82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* SCOPE TABS */
+    .tabs {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .tab {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: .5rem 1.2rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: .85rem;
+      transition: all .2s;
+    }
+
+    .tab.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .feature-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.2rem;
+    }
+
+    .feature-card h4 {
+      font-size: .92rem;
+      font-weight: 700;
+      margin-bottom: .6rem;
+      color: var(--text);
+    }
+
+    .feature-card ul {
+      list-style: none;
+    }
+
+    .feature-card ul li {
+      font-size: .8rem;
+      color: var(--muted);
+      padding: .2rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .feature-card ul li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* TECH */
+    .tech-stack {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .tech-pill {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: .5rem 1rem;
+      font-size: .82rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .tech-pill .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* TIMELINE */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--primary), var(--accent));
+      border-radius: 99px;
+    }
+
+    .phase {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .phase::before {
+      content: '';
+      position: absolute;
+      left: -2.45rem;
+      top: .3rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+    }
+
+    .phase-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: .5rem;
+      flex-wrap: wrap;
+    }
+
+    .phase-num {
+      background: var(--primary);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 700;
+      padding: .2rem .7rem;
+      border-radius: 999px;
+    }
+
+    .phase-dur {
+      background: var(--bg3);
+      color: var(--muted);
+      font-size: .72rem;
+      padding: .2rem .7rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+
+    .phase h3 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .phase p {
+      font-size: .83rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* TEAM */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .team-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .team-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .team-card h3 {
+      font-size: .95rem;
+      font-weight: 700;
+      margin-bottom: .2rem;
+    }
+
+    .team-role {
+      font-size: .75rem;
+      color: var(--accent);
+      margin-bottom: .8rem;
+    }
+
+    .team-card p {
+      font-size: .8rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* PRICING */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .price-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-card.featured {
+      border-color: var(--primary);
+      background: linear-gradient(135deg, rgba(27, 79, 219, .15), var(--bg2));
+    }
+
+    .price-card.featured::before {
+      content: 'RECOMENDADO';
+      position: absolute;
+      top: 1rem;
+      right: -1.5rem;
+      background: var(--primary);
+      color: #fff;
+      font-size: .65rem;
+      font-weight: 700;
+      padding: .3rem 2rem;
+      transform: rotate(35deg);
+      letter-spacing: 1px;
+    }
+
+    .price-label {
+      font-size: .75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: .5rem;
+    }
+
+    .price-value {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--text);
+      margin-bottom: .3rem;
+    }
+
+    .price-value span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .price-desc {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .price-features {
+      list-style: none;
+    }
+
+    .price-features li {
+      font-size: .83rem;
+      color: var(--muted);
+      padding: .45rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    .price-features li:last-child {
+      border: none;
+    }
+
+    .price-features li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* PAYMENT PHASES */
+    .payment-phases {
+      display: grid;
+      gap: .8rem;
+    }
+
+    .pay-row {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .pay-row:hover {
+      border-color: var(--primary);
+    }
+
+    .pay-name {
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    .pay-pct {
+      font-size: .78rem;
+      color: var(--muted);
+    }
+
+    .pay-val {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    /* PORTFOLIO */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .port-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border-color .2s;
+    }
+
+    .port-card:hover {
+      border-color: var(--accent);
+    }
+
+    .port-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: .4rem;
+    }
+
+    .port-card p {
+      font-size: .8rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .port-card a {
+      font-size: .78rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .port-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* DIVIDER */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-stats {
+        gap: 1.5rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav>
-  <div class="nav-logo">
-    <img src="logo-branca.png" alt="Capisite" style="height: 32px; width: auto;">
-  </div>
-  <div class="nav-links">
-    <a href="#sobre">Sobre</a>
-    <a href="#escopo">Escopo</a>
-    <a href="#cronograma">Cronograma</a>
-    <a href="#equipe">Equipe</a>
-    <a href="#investimento">Investimento</a>
-    <a href="#portfolio">Portfólio</a>
-  </div>
-</nav>
+  <nav>
+    <div class="nav-logo">
+      <img src="logo-branca.png" alt="Capisite" style="height: 32px; width: auto;">
+    </div>
+    <div class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#escopo">Escopo</a>
+      <a href="#cronograma">Cronograma</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#investimento">Investimento</a>
+      <a href="#portfolio">Portfólio</a>
+    </div>
+  </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="badge">Proposta Comercial · Fevereiro 2026</div>
-  <h1>Plataforma Digital Integrada<br><span>para a ASCESA</span></h1>
-  <p>Site institucional + Aplicativo Mobile (iOS & Android) + Sistema completo de gestão de associados — uma infraestrutura digital moderna, segura e escalável.</p>
-  <div class="hero-btns">
-    <a href="Proposta_Capisite.pdf" download class="btn-primary" style="background: var(--accent); color: var(--bg); font-weight: 800; box-shadow: 0 4px 14px rgba(62,207,207,0.4); transform: scale(1.05);">📄 Baixar Proposta Completa</a>
-    <a href="#investimento" class="btn-primary">Ver Investimento</a>
-    <a href="#escopo" class="btn-outline">Explorar Escopo</a>
-  </div>
-  <div class="hero-stats">
-    <div class="stat"><strong>6–7</strong><span>meses de prazo</span></div>
-    <div class="stat"><strong>3</strong><span>plataformas integradas</span></div>
-    <div class="stat"><strong>30k+</strong><span>convênios suportados</span></div>
-    <div class="stat"><strong>90</strong><span>dias de garantia</span></div>
-  </div>
-</div>
-
-<hr class="section-divider">
-
-<!-- VISÃO ESTRATÉGICA -->
-<section id="sobre">
-  <div class="section-label">Visão Estratégica</div>
-  <h2>Muito além de um site</h2>
-  <p class="subtitle">Compreendemos que a ASCESA busca uma infraestrutura tecnológica capaz de centralizar operações, ampliar o alcance nacional e proporcionar controle e inteligência à diretoria.</p>
-  <div class="pillars">
-    <div class="pillar"><div class="pillar-icon">🔒</div><h3>Segurança</h3><p>Criptografia ponta a ponta, conformidade LGPD, autenticação JWT e logs de auditoria em todas as ações críticas.</p></div>
-    <div class="pillar"><div class="pillar-icon">📈</div><h3>Escalabilidade</h3><p>Arquitetura cloud preparada para crescimento nacional, com suporte a microsserviços no futuro.</p></div>
-    <div class="pillar"><div class="pillar-icon">⚡</div><h3>Performance</h3><p>Cache estratégico, CDN, índices otimizados e monitoramento contínuo para experiência fluida.</p></div>
-    <div class="pillar"><div class="pillar-icon">🏛️</div><h3>Governança</h3><p>Painel administrativo robusto com controle de permissões, relatórios e auditoria de operações.</p></div>
-    <div class="pillar"><div class="pillar-icon">🛠️</div><h3>Sustentabilidade</h3><p>Código limpo, documentado e modular — fácil de manter e evoluir sem reestruturações críticas.</p></div>
-    <div class="pillar"><div class="pillar-icon">♿</div><h3>Acessibilidade</h3><p>Boas práticas WCAG, suporte a contraste elevado e estrutura pronta para expansão de idiomas.</p></div>
-  </div>
-</section>
-
-<hr class="section-divider">
-
-<!-- ESCOPO -->
-<section id="escopo">
-  <div class="section-label">Escopo do Projeto</div>
-  <h2>O que será desenvolvido</h2>
-  <p class="subtitle">Três plataformas integradas por uma API centralizada, compartilhando a mesma base de dados e garantindo consistência em tempo real.</p>
-
-  <div class="tabs">
-    <div class="tab active" onclick="showTab(event, 'site')">🌐 Site Web</div>
-    <div class="tab" onclick="showTab(event, 'app')">📱 Aplicativo Mobile</div>
-    <div class="tab" onclick="showTab(event, 'admin')">⚙️ Administrativo</div>
-    <div class="tab" onclick="showTab(event, 'extras')">✨ Funcionalidades Extras</div>
-  </div>
-
-  <div id="site" class="tab-content active">
-    <div class="feature-grid">
-      <div class="feature-card"><h4>🏠 Páginas Institucionais</h4><ul><li>Home, Sobre, Contato</li><li>Blog e FAQ dinâmico</li><li>SEO técnico aplicado</li><li>Conteúdo 100% gerenciável</li></ul></div>
-      <div class="feature-card"><h4>🎁 Benefícios & Convênios</h4><ul><li>Catálogo com filtros avançados</li><li>Busca inteligente</li><li>Página individual por convênio</li><li>Recursos visuais (fotos/vídeos)</li></ul></div>
-      <div class="feature-card"><h4>📝 Cadastro & Login</h4><ul><li>Formulário validado e responsivo</li><li>Confirmação por e-mail</li><li>Login social opcional</li><li>Fluxo integrado ao admin</li></ul></div>
-      <div class="feature-card"><h4>👤 Área do Associado</h4><ul><li>Dashboard personalizado</li><li>Extrato de pagamentos</li><li>Atualização de dados</li><li>Canal direto com a associação</li></ul></div>
-      <div class="feature-card"><h4>🛒 Vitrine Virtual</h4><ul><li>Anúncios pelos próprios associados</li><li>Moderação administrativa</li><li>Filtros e categorias</li><li>Termo de responsabilidade</li></ul></div>
-      <div class="feature-card"><h4>💬 Chat & Suporte</h4><ul><li>Ferramenta integrada de chat</li><li>Gestão via painel</li><li>Chatbot para triagem automática</li><li>Controle de horários</li></ul></div>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="badge">Proposta Comercial · Fevereiro 2026</div>
+    <h1>Plataforma Digital Integrada<br><span>para a ASCESA</span></h1>
+    <p>Site institucional + Aplicativo Mobile (iOS & Android) + Sistema completo de gestão de associados — uma
+      infraestrutura digital moderna, segura e escalável.</p>
+    <div class="hero-btns">
+      <a href="#investimento" class="btn-primary"
+        style="background: var(--accent); color: var(--bg); font-weight: 800; box-shadow: 0 4px 14px rgba(62,207,207,0.4); transform: scale(1.05);">Ver
+        Investimento</a>
+      <a href="#escopo" class="btn-outline">Explorar Escopo</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>1</strong><span>mês de prazo</span></div>
+      <div class="stat"><strong>3</strong><span>plataformas integradas</span></div>
+      <div class="stat"><strong>30k+</strong><span>convênios suportados</span></div>
+      <div class="stat"><strong>30</strong><span>dias de garantia</span></div>
     </div>
   </div>
 
-  <div id="app" class="tab-content">
-    <div class="feature-grid">
-      <div class="feature-card"><h4>📇 Carteirinha Digital</h4><ul><li>QR Code para validação</li><li>Disponível offline</li><li>Atualização automática de status</li><li>Token rotativo antifraude</li></ul></div>
-      <div class="feature-card"><h4>🔔 Notificações Push</h4><ul><li>Via Firebase</li><li>Segmentação por perfil</li><li>Promoções de convênios</li><li>Lembretes de pagamento</li></ul></div>
-      <div class="feature-card"><h4>📍 Geolocalização</h4><ul><li>Parceiros próximos no mapa</li><li>Alertas ao se aproximar de parceiros</li><li>Filtro regional</li><li>Consentimento explícito</li></ul></div>
-      <div class="feature-card"><h4>📷 QR Code & Câmera</h4><ul><li>Leitura de QR/código de barras</li><li>Upload de documentos</li><li>Compressão automática de imagens</li><li>Histórico de validações</li></ul></div>
-      <div class="feature-card"><h4>🔐 Segurança Mobile</h4><ul><li>Biometria (Touch/Face ID)</li><li>Timeout automático</li><li>Bloqueio após tentativas inválidas</li><li>Criptografia local</li></ul></div>
-      <div class="feature-card"><h4>📴 Recursos Offline</h4><ul><li>Carteirinha sem conexão</li><li>Dados básicos do perfil</li><li>Sincronização automática</li><li>Modo economia de dados</li></ul></div>
+  <hr class="section-divider">
+
+  <!-- VISÃO ESTRATÉGICA -->
+  <section id="sobre">
+    <div class="section-label">Visão Estratégica</div>
+    <h2>Muito além de um site</h2>
+    <p class="subtitle">Compreendemos que a ASCESA busca uma infraestrutura tecnológica capaz de centralizar operações,
+      ampliar o alcance nacional e proporcionar controle e inteligência à diretoria.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">🔒</div>
+        <h3>Segurança</h3>
+        <p>Criptografia ponta a ponta, conformidade LGPD, autenticação JWT e logs de auditoria em todas as ações
+          críticas.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">📈</div>
+        <h3>Escalabilidade</h3>
+        <p>Arquitetura cloud preparada para crescimento nacional, com suporte a microsserviços no futuro.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">⚡</div>
+        <h3>Performance</h3>
+        <p>Cache estratégico, CDN, índices otimizados e monitoramento contínuo para experiência fluida.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🏛️</div>
+        <h3>Governança</h3>
+        <p>Painel administrativo robusto com controle de permissões, relatórios e auditoria de operações.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🛠️</div>
+        <h3>Sustentabilidade</h3>
+        <p>Código limpo, documentado e modular — fácil de manter e evoluir sem reestruturações críticas.</p>
+      </div>
+
     </div>
-  </div>
+  </section>
 
-  <div id="admin" class="tab-content">
-    <div class="feature-grid">
-      <div class="feature-card"><h4>✅ Gestão de Inscrições</h4><ul><li>Painel de novas solicitações</li><li>Aprovação/recusa com justificativa</li><li>Notificação automática ao solicitante</li><li>Log de auditoria completo</li></ul></div>
-      <div class="feature-card"><h4>👥 Cadastro de Associados</h4><ul><li>Perfil completo e editável</li><li>Histórico de ações</li><li>Notas internas</li><li>Controle de versão de dados</li></ul></div>
-      <div class="feature-card"><h4>💰 Status & Pagamentos</h4><ul><li>Indicadores visuais: ativo/inadimplente</li><li>Lembretes automáticos</li><li>Relatório de inadimplência</li><li>Bloqueio automático de benefícios</li></ul></div>
-      <div class="feature-card"><h4>📊 Relatórios Estratégicos</h4><ul><li>Demográficos e comportamentais</li><li>Financeiros com projeções</li><li>Exportação em CSV/Excel</li><li>Ranking de convênios mais usados</li></ul></div>
-      <div class="feature-card"><h4>🎯 Gestão de Convênios</h4><ul><li>Cadastro, edição, desativação</li><li>Controle por tipo de plano</li><li>Agendamento de expiração</li><li>Histórico de alterações</li></ul></div>
-      <div class="feature-card"><h4>🔑 Controle de Acesso</h4><ul><li>Múltiplos perfis hierárquicos</li><li>Permissões granulares</li><li>Auditoria de ações críticas</li><li>Conformidade LGPD</li></ul></div>
+  <hr class="section-divider">
+
+  <!-- ESCOPO -->
+  <section id="escopo">
+    <div class="section-label">Escopo do Projeto</div>
+    <h2>O que será desenvolvido</h2>
+    <p class="subtitle">Três plataformas integradas por uma API centralizada, compartilhando a mesma base de dados e
+      garantindo consistência em tempo real.</p>
+
+    <div class="tabs">
+      <div class="tab active" onclick="showTab(event, 'site')">🌐 Site Web</div>
+      <div class="tab" onclick="showTab(event, 'app')">📱 Aplicativo Mobile</div>
+      <div class="tab" onclick="showTab(event, 'admin')">⚙️ Administrativo</div>
+      <div class="tab" onclick="showTab(event, 'extras')">✨ Funcionalidades Extras</div>
     </div>
-  </div>
 
-  <div id="extras" class="tab-content">
-    <div class="feature-grid">
-      <div class="feature-card"><h4>🔗 Programa de Indicação</h4><ul><li>Link único rastreável por associado</li><li>Recompensas automáticas</li><li>Dashboard para a diretoria</li><li>Detecção de fraudes</li></ul></div>
-      <div class="feature-card"><h4>🎓 Conteúdo Exclusivo</h4><ul><li>Artigos, vídeos, webinars</li><li>Controle por tipo de plano</li><li>Certificados automáticos</li><li>Análise de engajamento</li></ul></div>
-      <div class="feature-card"><h4>💬 Fórum/Comunidade</h4><ul><li>Tópicos e categorias</li><li>Moderação pela diretoria</li><li>Sistema de reputação</li><li>Notificações de interações</li></ul></div>
-      <div class="feature-card"><h4>📅 Gestão de Eventos</h4><ul><li>Inscrição online</li><li>Controle de vagas e presença</li><li>Certificado digital</li><li>Lista de espera automática</li></ul></div>
-      <div class="feature-card"><h4>📋 Pesquisas & NPS</h4><ul><li>Criação de pesquisas customizadas</li><li>Envio segmentado</li><li>NPS automático</li><li>Comparativo histórico</li></ul></div>
-      <div class="feature-card"><h4>🏆 Gamificação</h4><ul><li>Pontos por engajamento</li><li>Badges e emblemas</li><li>Ranking interno</li><li>Níveis: Bronze, Prata, Ouro</li></ul></div>
+    <div id="site" class="tab-content active">
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4>🏠 Páginas Institucionais</h4>
+          <ul>
+            <li>Home, Sobre, Contato, FAQ</li>
+            <li>Blog dinâmico</li>
+            <li>Conteúdo gerenciável</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h4>🎁 Benefícios & Convênios</h4>
+          <ul>
+            <li>Catálogo com filtros</li>
+            <li>Busca inteligente</li>
+            <li>Página individual por convênio</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h4>📝 Cadastro & Login</h4>
+          <ul>
+            <li>Formulário validado e responsivo</li>
+            <li>Confirmação por e-mail</li>
+            <li>Login social</li>
+            <li>Fluxo integrado ao admin</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h4>👤 Área do Associado</h4>
+          <ul>
+            <li>Dashboard personalizado</li>
+            <li>Extrato de pagamentos</li>
+            <li>Atualização de dados</li>
+            <li>Canal direto com a associação</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h4>🛒 Vitrine Virtual</h4>
+          <ul>
+            <li>Anúncios estilo classificados</li>
+            <li>Contato via WhatsApp/Telefone</li>
+            <li>Filtros e categorias</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h4>💬 Chat & Suporte</h4>
+          <ul>
+            <li>Ferramenta integrada de chat</li>
+            <li>Gestão via painel</li>
+            <li>Suporte e alertas via email</li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
 
-<hr class="section-divider">
+    <div id="app" class="tab-content">
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4>📇 Carteirinha Digital</h4>
+          <ul>
+            <li>QR Code para validação</li>
+            <li>Disponível offline</li>
+            <li>Atualização automática de status</li>
+            <li>Token rotativo antifraude</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h4>🔔 Notificações Push</h4>
+          <ul>
+            <li>Via Firebase</li>
+            <li>Promoções de convênios</li>
+            <li>Lembretes de pagamento</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h4>📍 Geolocalização</h4>
+          <ul>
+            <li>Parceiros próximos no mapa</li>
+            <li>Alertas ao se aproximar de parceiros</li>
+            <li>Filtro regional</li>
+            <li>Consentimento explícito</li>
+          </ul>
+        </div>
 
-<!-- TECH -->
-<section>
-  <div class="section-label">Stack Tecnológica</div>
-  <h2>Tecnologias escolhidas</h2>
-  <p class="subtitle">Escolhas modernas, bem justificadas e alinhadas com escalabilidade, performance e manutenibilidade de longo prazo.</p>
-  <div class="tech-stack">
-    <div class="tech-pill"><span class="dot"></span> Next.js (Frontend Web)</div>
-    <div class="tech-pill"><span class="dot"></span> NestJS (Backend API)</div>
-    <div class="tech-pill"><span class="dot"></span> Flutter (Mobile iOS & Android)</div>
-    <div class="tech-pill"><span class="dot"></span> PostgreSQL (Banco de Dados)</div>
-    <div class="tech-pill"><span class="dot"></span> Docker + Cloud (Infraestrutura)</div>
-    <div class="tech-pill"><span class="dot"></span> Firebase (Push Notifications)</div>
-    <div class="tech-pill"><span class="dot"></span> JWT + OAuth (Autenticação)</div>
-    <div class="tech-pill"><span class="dot"></span> Redis (Cache)</div>
-    <div class="tech-pill"><span class="dot"></span> Swagger/OpenAPI (Docs API)</div>
-  </div>
-</section>
-
-<hr class="section-divider">
-
-<!-- CRONOGRAMA -->
-<section id="cronograma">
-  <div class="section-label">Cronograma</div>
-  <h2>6 a 7 meses de desenvolvimento</h2>
-  <p class="subtitle">Execução em metodologia Scrum com sprints quinzenais, ambiente de homologação e validação formal da diretoria em cada entrega.</p>
-  <div class="timeline">
-    <div class="phase">
-      <div class="phase-header"><span class="phase-num">FASE 0</span><span class="phase-dur">2 semanas</span><h3>Imersão Estratégica e Planejamento</h3></div>
-      <p>Kickoff, workshop de alinhamento, mapeamento de regras de negócio, backlog estruturado e arquitetura validada.</p>
+        <div class="feature-card">
+          <h4>🔐 Segurança Mobile</h4>
+          <ul>
+            <li>Biometria (Touch/Face ID)</li>
+            <li>Timeout automático</li>
+            <li>Bloqueio após tentativas inválidas</li>
+            <li>Criptografia local</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h4>📴 Recursos Offline</h4>
+          <ul>
+            <li>Carteirinha sem conexão</li>
+            <li>Dados básicos do perfil</li>
+            <li>Sincronização automática</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="phase">
-      <div class="phase-header"><span class="phase-num">FASE 1</span><span class="phase-dur">4 semanas</span><h3>Arquitetura e Estrutura Base</h3></div>
-      <p>Backend, API central, modelagem do banco de dados, autenticação, infraestrutura cloud e ambientes configurados.</p>
+
+    <div id="admin" class="tab-content">
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4>✅ Gestão de Inscrições</h4>
+          <ul>
+            <li>Painel de novas solicitações</li>
+            <li>Aprovação/recusa com justificativa</li>
+            <li>Notificação automática ao solicitante</li>
+            <li>Log de auditoria completo</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h4>👥 Cadastro de Associados</h4>
+          <ul>
+            <li>Perfil completo e editável</li>
+            <li>Histórico de ações</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h4>💰 Status & Pagamentos</h4>
+          <ul>
+            <li>Indicadores visuais: ativo/inadimplente</li>
+            <li>Relatório de inadimplência</li>
+            <li>Bloqueio automático de benefícios</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h4>📊 Relatórios Estratégicos</h4>
+          <ul>
+            <li>Demográficos e comportamentais</li>
+            <li>Financeiros com projeções</li>
+            <li>Exportação em CSV/Excel</li>
+            <li>Ranking de convênios mais usados</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <h4>🔑 Controle de Acesso</h4>
+          <ul>
+            <li>Múltiplos perfis hierárquicos</li>
+            <li>Permissões granulares</li>
+            <li>Auditoria de ações críticas</li>
+            <li>Conformidade LGPD</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="phase">
-      <div class="phase-header"><span class="phase-num">FASE 2</span><span class="phase-dur">4–5 semanas</span><h3>Módulo Administrativo</h3></div>
-      <p>Gestão de associados, fluxo de aprovação/recusa, controle de status, inadimplência e relatórios iniciais.</p>
+
+    <div id="extras" class="tab-content">
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h4>🔗 Programa de Indicação</h4>
+          <ul>
+            <li>Link único rastreável por associado</li>
+            <li>Recompensas automáticas</li>
+            <li>Dashboard para a diretoria</li>
+            <li>Detecção de fraudes</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h4>📅 Gestão de Eventos</h4>
+          <ul>
+            <li>Inscrição online</li>
+            <li>Controle de vagas e presença</li>
+            <li>Certificado digital</li>
+            <li>Lista de espera automática</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h4>📋 Pesquisas & NPS</h4>
+          <ul>
+            <li>Criação de pesquisas customizadas</li>
+            <li>Envio segmentado</li>
+            <li>NPS automático</li>
+            <li>Comparativo histórico</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h4>🏆 Gamificação</h4>
+          <ul>
+            <li>Pontos por engajamento</li>
+            <li>Badges e emblemas</li>
+            <li>Ranking interno</li>
+            <li>Níveis: Bronze, Prata, Ouro</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h4>♿ Acessibilidade Integrada</h4>
+          <ul>
+            <li>Suporte avançado para leitores de tela</li>
+            <li>Ajustes de contraste e fonte (WCAG)</li>
+            <li>Navegação simplificada por teclado</li>
+            <li>Atalhos de acessibilidade</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <h4>🌍 Multi-idiomas</h4>
+          <ul>
+            <li>Sistema preparado para internacionalização</li>
+            <li>Expansão para Inglês (EN)</li>
+            <li>Expansão para Espanhol (ES)</li>
+            <li>Painel para tradução dinâmica</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top: 2rem; font-size: 0.85rem; color: var(--muted); text-align: center; font-style: italic;">
+        * Nota: Todas as funcionalidades extras listadas nesta seção serão orçadas e terão seus valores a combinar
+        futuramente, com base nas prioridades de expansão da ASCESA.
+      </p>
     </div>
-    <div class="phase">
-      <div class="phase-header"><span class="phase-num">FASE 3</span><span class="phase-dur">5–6 semanas</span><h3>Site Institucional + Área Restrita</h3></div>
-      <p>UI/UX e Design System, páginas institucionais, benefícios com filtros, área do associado, SEO e blog.</p>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- TECH -->
+  <section>
+    <div class="section-label">Stack Tecnológica</div>
+    <h2>Tecnologias escolhidas</h2>
+    <p class="subtitle">Escolhas modernas, bem justificadas e alinhadas com escalabilidade, performance e
+      manutenibilidade de longo prazo.</p>
+    <div class="tech-stack">
+      <div class="tech-pill"><span class="dot"></span> Next.js (Frontend Web)</div>
+      <div class="tech-pill"><span class="dot"></span> NestJS (Backend API)</div>
+      <div class="tech-pill"><span class="dot"></span> Flutter (Mobile iOS & Android)</div>
+      <div class="tech-pill"><span class="dot"></span> PostgreSQL (Banco de Dados)</div>
+      <div class="tech-pill"><span class="dot"></span> Docker + Cloud (Infraestrutura)</div>
+      <div class="tech-pill"><span class="dot"></span> Firebase (Push Notifications)</div>
+      <div class="tech-pill"><span class="dot"></span> JWT + OAuth (Autenticação)</div>
+      <div class="tech-pill"><span class="dot"></span> Swagger (Docs API)</div>
     </div>
-    <div class="phase">
-      <div class="phase-header"><span class="phase-num">FASE 4</span><span class="phase-dur">6–8 semanas</span><h3>Aplicativo Mobile</h3></div>
-      <p>Flutter integrado à API, login biométrico, carteirinha digital, notificações push, geolocalização e recursos offline.</p>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- CRONOGRAMA -->
+  <section id="cronograma">
+    <div class="section-label">Cronograma</div>
+    <h2>1 mês de desenvolvimento</h2>
+    <p class="subtitle">Execução em metodologia ágil, focada na entrega rápida do MVP de gestão e funcionalidades
+      subsequentes por semana.</p>
+    <div class="timeline">
+      <div class="phase">
+        <div class="phase-header"><span class="phase-num">SEMANA 1</span><span class="phase-dur">Setup & UX/UI</span>
+          <h3>Início do MVP (Web e App)</h3>
+        </div>
+        <p>Setup arquitetural (Web, Mobile e Backend), UX/UI focada no cadastro, desenvolvimento das telas
+          institucionais no site e fundação do aplicativo em paralelo.</p>
+      </div>
+      <div class="phase">
+        <div class="phase-header"><span class="phase-num">SEMANA 2</span><span class="phase-dur">Entrega do MVP</span>
+          <h3>Associação e Gestão (Site e App)</h3>
+        </div>
+        <p>Fluxo do usuário (Cadastro, Inscrição e Login completo) em ambas as plataformas. Área Restrita do Associado e
+          painel da Diretoria online. <strong>Marco: Lançamento do MVP Web e Mobile.</strong></p>
+      </div>
+      <div class="phase">
+        <div class="phase-header"><span class="phase-num">SEMANA 3</span><span class="phase-dur">Feature
+            Exclusiva</span>
+          <h3>Benefícios e Carteirinha (Site e App)</h3>
+        </div>
+        <p>Listagem e detalhes de benefícios no site e aplicativo, liberação da Carteirinha Digital para os usuários
+          acessarem rapidamente pelo celular ou navegador.</p>
+      </div>
+      <div class="phase">
+        <div class="phase-header"><span class="phase-num">SEMANA 4</span><span class="phase-dur">Entrega Final</span>
+          <h3>Testes, Otimização e Lojas</h3>
+        </div>
+        <p>Bateria de testes (QA), otimização de performance, disparo de notificações push (App), relatórios
+          consolidados
+          e submissão formal (App Store e Google Play).</p>
+      </div>
     </div>
-    <div class="phase">
-      <div class="phase-header"><span class="phase-num">FASE 5</span><span class="phase-dur">3 semanas</span><h3>Integrações e Homologação Geral</h3></div>
-      <p>Gateway de pagamento, e-mail marketing, analytics, testes de carga, segurança e validação final da diretoria.</p>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- EQUIPE -->
+  <section id="equipe">
+    <div class="section-label">Equipe do Projeto</div>
+    <h2>Quem vai construir</h2>
+    <p class="subtitle">Equipe enxuta, focada e ágil, com dedicação exclusiva para garantir o lançamento das features
+      semanais.</p>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">HR</div>
+        <h3>Hugo Rodrigues Costa</h3>
+        <div class="team-role">Tech Lead & Gerente de Projeto</div>
+        <p>Experiência em sistemas web com Next.js, APIs robustas e arquitetura cloud. Foco na segurança, performance e
+          entregas ágeis.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">LA</div>
+        <h3>Lucas Araujo</h3>
+        <div class="team-role">Desenvolvedor Full-Stack / Mobile</div>
+        <p>Atua nas camadas web, backend e mobile. Responsável por testes integrados, validação funcional, integração de
+          interfaces gráficas e qualidade das entregas.</p>
+      </div>
     </div>
-    <div class="phase">
-      <div class="phase-header"><span class="phase-num">FASE 6</span><span class="phase-dur">2 semanas</span><h3>Publicação e Lançamento</h3></div>
-      <p>Deploy em produção, publicação nas lojas (App Store e Google Play), monitoramento intensivo e estabilização.</p>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- INVESTIMENTO -->
+  <section id="investimento">
+    <div class="section-label">Investimento</div>
+    <h2>Dois modelos de contratação</h2>
+    <p class="subtitle">Escolha o formato que melhor se adapta à estratégia e ao momento da ASCESA.</p>
+
+    <div class="pricing-grid">
+      <div class="price-card featured">
+        <div class="price-label">Lançamento por Features</div>
+        <div class="price-value">R$ 35.000 <span>total</span></div>
+        <div class="price-desc">Projeto completo (Site, Admin, Autenticação, Benefícios e App Mobile) entregue em 1 mês.
+        </div>
+        <ul class="price-features">
+          <li>MVP (Site e App) em 2 semanas</li>
+          <li>Pagamento atrelado e escalonado por feature</li>
+          <li>Desenvolvimento Web e Mobile simultâneo</li>
+          <li>Design responsivo e infraestrutura pronta</li>
+          <li>Publicação nas lojas (App Store e Google Play)</li>
+          <li>30 dias de garantia técnica</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-label">Desenvolvimento Contínuo</div>
+        <div class="price-value">R$ 60 <span>/hora por dev</span></div>
+        <div class="price-desc">Para evolução permanente, manutenção contínua e novas funcionalidades fora do escopo
+          principal.</div>
+        <ul class="price-features">
+          <li>2 desenvolvedores exclusivos</li>
+          <li>Implemento de extras (Gamificação, Fórum, ERP)</li>
+          <li>Valorização e expansão de banco de horas</li>
+          <li>Manutenção e expansão ágeis</li>
+          <li>Flexibilidade de gestão do escopo</li>
+          <li>Acompanhamento contínuo pós-lançamento</li>
+        </ul>
+      </div>
     </div>
-  </div>
-</section>
 
-<hr class="section-divider">
-
-<!-- EQUIPE -->
-<section id="equipe">
-  <div class="section-label">Equipe do Projeto</div>
-  <h2>Quem vai construir</h2>
-  <p class="subtitle">Time especializado com liderança técnica centralizada e papéis bem definidos.</p>
-  <div class="team-grid">
-    <div class="team-card">
-      <div class="team-avatar">HR</div>
-      <h3>Hugo Rodrigues Costa</h3>
-      <div class="team-role">Tech Lead & Gerente de Projeto</div>
-      <p>Fundador e líder técnico da Capisite. Experiência internacional em sistemas web com Next.js, NestJS, APIs robustas e arquitetura cloud (AWS/Azure).</p>
+    <br>
+    <h3 style="font-size:1.1rem; margin-bottom:1.2rem; color:var(--muted);">Cronograma de Pagamento Atrelado às Entregas
+    </h3>
+    <div class="payment-phases">
+      <div class="pay-row">
+        <div>
+          <div class="pay-name">Entrega 1 · Kick-off e Setup</div>
+          <div class="pay-pct">20% · No ato do fechamento da Proposta</div>
+        </div>
+        <div class="pay-val">R$ 7.000</div>
+      </div>
+      <div class="pay-row">
+        <div>
+          <div class="pay-name">Entrega 2 · MVP de Associação (Site e App)</div>
+          <div class="pay-pct">40% · Final da Sem. 2 (Cadastro e Gestão operacionais)</div>
+        </div>
+        <div class="pay-val">R$ 14.000</div>
+      </div>
+      <div class="pay-row">
+        <div>
+          <div class="pay-name">Entrega 3 · Benefícios e Carteirinha (Site e App)</div>
+          <div class="pay-pct">20% · Final da Sem. 3 (Vitrine sincronizada)</div>
+        </div>
+        <div class="pay-val">R$ 7.000</div>
+      </div>
+      <div class="pay-row">
+        <div>
+          <div class="pay-name">Entrega 4 · Testes, Otimização e Publicação</div>
+          <div class="pay-pct">20% · Final da Sem. 4 (QA, Push e Publicação)</div>
+        </div>
+        <div class="pay-val">R$ 7.000</div>
+      </div>
     </div>
-    <div class="team-card">
-      <div class="team-avatar">LF</div>
-      <h3>Leandro Ferreira</h3>
-      <div class="team-role">Frontend Sênior (UX/UI)</div>
-      <p>Responsável pelo Design System, arquitetura de componentes, prototipação no Figma e garantia de responsividade e acessibilidade da plataforma.</p>
     </div>
-    <div class="team-card">
-      <div class="team-avatar">MM</div>
-      <h3>Mauricio Maiolio</h3>
-      <div class="team-role">Desenvolvedor Backend & Mobile</div>
-      <p>Especialista em APIs REST, modelagem de dados e desenvolvimento mobile com Flutter. Foco em segurança e performance do backend.</p>
+
+    <p style="margin-top:1.5rem; font-size:.8rem; color:var(--muted);">⚠️ Não incluídos: hospedagem cloud (est.
+      R$200–600/mês), taxas de gateway, licenças de terceiros e taxas das lojas de apps — contratados diretamente
+      pela ASCESA.</p>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- SUPORTE -->
+  <section>
+    <div class="section-label">Pós-Lançamento</div>
+    <h2>Garantia & Manutenção</h2>
+    <p class="subtitle">A plataforma continua evoluindo após o lançamento com suporte estruturado.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">🛡️</div>
+        <h3>30 Dias de Garantia</h3>
+        <p>Correção de bugs e ajustes técnicos decorrentes da implementação do fluxo principal, sem custo.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">�️</div>
+        <h3>Manutenção Essencial</h3>
+        <p>Plano mensal de R$ 500 para manutenção preventiva, atualizações de segurança e estabilidade contínua.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">📦</div>
+        <h3>Banco de Horas</h3>
+        <p>Para manutenção evolutiva e novas funcionalidades fora do escopo inicial: R$ 60/hora por dev.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🚀</div>
+        <h3>Escalabilidade</h3>
+        <p>Preparado para agregar facilmente módulos extras listados na RFP através de novas solicitações.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">📡</div>
+        <h3>SLA de Atendimento</h3>
+        <p>Incidente crítico: 24h · Moderado: 48h · Melhorias: avaliação rápida dentro de cada sprint.</p>
+      </div>
     </div>
-    <div class="team-card">
-      <div class="team-avatar">LA</div>
-      <h3>Lucas Araujo</h3>
-      <div class="team-role">Full Stack & QA</div>
-      <p>Atua nas camadas web, backend e mobile. Responsável por testes integrados, validação funcional e qualidade técnica das entregas.</p>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="section-label">Portfólio</div>
+    <h2>Projetos desenvolvidos</h2>
+    <p class="subtitle">Experiência em plataformas complexas, áreas restritas, integrações financeiras e sistemas com
+      grande volume de dados.</p>
+    <div class="portfolio-grid">
+      <div class="port-card">
+        <h3>🏠 Arcahub</h3>
+        <p>Plataforma CRM para corretores de imóveis em Orlando/FL, com IA para qualificação de leads, área restrita e
+          automações avançadas.</p><a href="https://arcahub.io" target="_blank">arcahub.io →</a>
+      </div>
+      <div class="port-card">
+        <h3>✈️ Finest Flights</h3>
+        <p>Ecossistema de venda de passagens e gestão de operações turísticas, com integrações de APIs complexas e
+          sistema transacional robusto.</p><a href="https://finestflights.com" target="_blank">finestflights.com →</a>
+      </div>
+      <div class="port-card">
+        <h3>💎 MJoias</h3>
+        <p>E-commerce de joias com integração financeira, controle de estoque, painel administrativo completo e catálogo
+          gerenciável.</p><a href="https://mjoias.com.br" target="_blank">mjoias.com.br →</a>
+      </div>
+      <div class="port-card">
+        <h3>🎲 Lokinho Prêmios</h3>
+        <p>Plataforma de rifas online com sistema de login, gerenciamento de bilhetes e controle rigoroso de transações
+          e permissões.</p><a href="https://www.lokinhopremios.com" target="_blank">lokinhopremios.com →</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<hr class="section-divider">
+  <footer>
+    <img src="capisite resumo-1-branco.png" alt="Capisite Logo"
+      style="height: 48px; width: auto; margin-bottom: 1rem; opacity: 0.9;">
+    <p><strong style="color:var(--accent)">Capisite</strong> · <a href="https://capisite.com"
+        target="_blank">capisite.com</a></p>
+    <p style="margin-top:.5rem">Proposta elaborada em 22/02/2026 para a ASCESA · Contato: <a
+        href="mailto:comercial@capisite.com">comercial@capisite.com</a></p>
+  </footer>
 
-<!-- INVESTIMENTO -->
-<section id="investimento">
-  <div class="section-label">Investimento</div>
-  <h2>Dois modelos de contratação</h2>
-  <p class="subtitle">Escolha o formato que melhor se adapta à estratégia e ao momento da ASCESA.</p>
-
-  <div class="pricing-grid">
-    <div class="price-card featured">
-      <div class="price-label">Escopo Fechado</div>
-      <div class="price-value">R$ 200.000 <span>total</span></div>
-      <div class="price-desc">Todas as funcionalidades descritas, prazo definido e marcos claros de entrega e pagamento.</div>
-      <ul class="price-features">
-        <li>Previsibilidade financeira total</li>
-        <li>Marcos objetivos de validação</li>
-        <li>Pagamento escalonado por fase</li>
-        <li>Site + App iOS & Android + Admin</li>
-        <li>Documentação técnica completa</li>
-        <li>Publicação nas lojas incluída</li>
-        <li>90 dias de garantia pós-entrega</li>
-      </ul>
-    </div>
-    <div class="price-card">
-      <div class="price-label">Time Dedicado</div>
-      <div class="price-value">R$ 80 <span>/hora por dev</span></div>
-      <div class="price-desc">Equipe exclusiva alocada com flexibilidade para ajustar escopo e prioridades ao longo do projeto.</div>
-      <ul class="price-features">
-        <li>~R$ 42.800/mês (cenário base)</li>
-        <li>3 desenvolvedores + Tech Lead</li>
-        <li>Duração estimada: 6 meses</li>
-        <li>Total estimado: R$ 256–270k</li>
-        <li>Flexibilidade de escopo</li>
-        <li>Ideal para evolução contínua</li>
-        <li>Pagamento mensal antecipado</li>
-      </ul>
-    </div>
-  </div>
-
-  <br>
-  <h3 style="font-size:1.1rem; margin-bottom:1.2rem; color:var(--muted);">Cronograma de Pagamento — Escopo Fechado</h3>
-  <div class="payment-phases">
-    <div class="pay-row"><div><div class="pay-name">Fase 0 · Imersão e Planejamento</div><div class="pay-pct">10% · Na assinatura do contrato</div></div><div class="pay-val">R$ 20.000</div></div>
-    <div class="pay-row"><div><div class="pay-name">Fase 1 · Arquitetura e Infraestrutura</div><div class="pay-pct">15%</div></div><div class="pay-val">R$ 30.000</div></div>
-    <div class="pay-row"><div><div class="pay-name">Fase 2 · Módulo Administrativo</div><div class="pay-pct">20%</div></div><div class="pay-val">R$ 40.000</div></div>
-    <div class="pay-row"><div><div class="pay-name">Fase 3 · Plataforma Web</div><div class="pay-pct">18%</div></div><div class="pay-val">R$ 36.000</div></div>
-    <div class="pay-row"><div><div class="pay-name">Fase 4 · Aplicativo Mobile</div><div class="pay-pct">18%</div></div><div class="pay-val">R$ 36.000</div></div>
-    <div class="pay-row"><div><div class="pay-name">Fase 5 · Integrações e Homologação</div><div class="pay-pct">10%</div></div><div class="pay-val">R$ 20.000</div></div>
-    <div class="pay-row"><div><div class="pay-name">Fase 6 · Publicação e Conclusão</div><div class="pay-pct">9%</div></div><div class="pay-val">R$ 18.000</div></div>
-  </div>
-
-  <p style="margin-top:1.5rem; font-size:.8rem; color:var(--muted);">⚠️ Não incluídos: hospedagem cloud (est. R$1.800–3.500/mês), taxas de gateway, licenças de terceiros e taxas das lojas de apps — contratados diretamente pela ASCESA.</p>
-</section>
-
-<hr class="section-divider">
-
-<!-- SUPORTE -->
-<section>
-  <div class="section-label">Pós-Lançamento</div>
-  <h2>Garantia & Manutenção</h2>
-  <p class="subtitle">A plataforma continua evoluindo após o lançamento com suporte estruturado.</p>
-  <div class="pillars">
-    <div class="pillar"><div class="pillar-icon">🛡️</div><h3>90 Dias de Garantia</h3><p>Correção de bugs e ajustes técnicos decorrentes da implementação, sem custo adicional.</p></div>
-    <div class="pillar"><div class="pillar-icon">📦</div><h3>Plano Essencial</h3><p>20h/mês por R$2.000 — correções, melhorias pontuais, atualizações preventivas e suporte prioritário.</p></div>
-    <div class="pillar"><div class="pillar-icon">⏱️</div><h3>Banco de Horas</h3><p>Horas avulsas sob demanda: R$90/h (dev) ou R$120/h (Tech Lead). Validade de 6 meses.</p></div>
-    <div class="pillar"><div class="pillar-icon">📡</div><h3>SLA de Atendimento</h3><p>Incidente crítico: 24h · Moderado: 48h · Melhorias: avaliação em até 5 dias úteis.</p></div>
-  </div>
-</section>
-
-<hr class="section-divider">
-
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <div class="section-label">Portfólio</div>
-  <h2>Projetos desenvolvidos</h2>
-  <p class="subtitle">Experiência em plataformas complexas, áreas restritas, integrações financeiras e sistemas com grande volume de dados.</p>
-  <div class="portfolio-grid">
-    <div class="port-card"><h3>🏠 Arcahub</h3><p>Plataforma CRM para corretores de imóveis em Orlando/FL, com IA para qualificação de leads, área restrita e automações avançadas.</p><a href="https://arcahub.io" target="_blank">arcahub.io →</a></div>
-    <div class="port-card"><h3>✈️ Finest Flights</h3><p>Ecossistema de venda de passagens e gestão de operações turísticas, com integrações de APIs complexas e sistema transacional robusto.</p><a href="https://finestflights.com" target="_blank">finestflights.com →</a></div>
-    <div class="port-card"><h3>💎 MJoias</h3><p>E-commerce de joias com integração financeira, controle de estoque, painel administrativo completo e catálogo gerenciável.</p><a href="https://mjoias.com.br" target="_blank">mjoias.com.br →</a></div>
-    <div class="port-card"><h3>🎲 Lokinho Prêmios</h3><p>Plataforma de rifas online com sistema de login, gerenciamento de bilhetes e controle rigoroso de transações e permissões.</p><a href="https://www.lokinhopremios.com" target="_blank">lokinhopremios.com →</a></div>
-  </div>
-</section>
-
-<footer>
-  <img src="capisite resumo-1-branco.png" alt="Capisite Logo" style="height: 48px; width: auto; margin-bottom: 1rem; opacity: 0.9;">
-  <p><strong style="color:var(--accent)">Capisite</strong> · <a href="https://capisite.com" target="_blank">capisite.com</a></p>
-  <p style="margin-top:.5rem">Proposta elaborada em 22/02/2026 para a ASCESA · Contato: <a href="mailto:comercial@capisite.com">comercial@capisite.com</a></p>
-</footer>
-
-<script>
-  function showTab(e, id) {
-    document.querySelectorAll('.tab').forEach((t) => t.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    e.currentTarget.classList.add('active');
-  }
-</script>
+  <script>
+    function showTab(e, id) {
+      document.querySelectorAll('.tab').forEach((t) => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      e.currentTarget.classList.add('active');
+    }
+  </script>
 </body>
+
 </html>
